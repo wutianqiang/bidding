@@ -55,7 +55,7 @@ prompt = PromptTemplate(
 
 # 将文档分割成小块
 texts = utils.get_split_text("data.txt")
-texts =texts[:4]
+#texts =texts[:4]
 
 # 创建向量数据库并持久化
 #persist_directory = 'db'  # 持久化存储目录
@@ -115,7 +115,7 @@ qa_chain = RetrievalQA.from_chain_type(
 )
 
 # 5. 提出问题并获取总结
-query = "请列出所有的网站地址"
+query = "请问项目预算是多少万"
 result = qa_chain.invoke(query)
 
 print("问题:", query)
