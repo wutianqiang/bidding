@@ -13,8 +13,10 @@ from utils import *
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large",base_url="https://api.openai-hk.com/v1")
 
 # 初始化 LLM
+# deepseek-reasoner  推理模型 DeepSeek-R1
+# deepseek-chat      DeepSeek-V3
 llm = ChatOpenAI(
-    model="deepseek-chat",  # 使用的模型名称，具体名称以 DeepSeek 官方文档为准
+    model="deepseek-reasoner",  # 使用的模型名称，具体名称以 DeepSeek 官方文档为准
     openai_api_key="sk-bdb95c9420874becab146824db240c90",  # 替换为你的 DeepSeek API Key
     openai_api_base="https://api.deepseek.com/v1",  # DeepSeek 的 API 基础地址
     temperature=0,  # 控制生成文本的随机性，可根据需求调整
