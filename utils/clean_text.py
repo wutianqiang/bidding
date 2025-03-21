@@ -12,7 +12,7 @@ def load_txt_file(file_path):
     return documents
 
 # 2. 分片处理
-def split_documents(documents, chunk_size=500, chunk_overlap=50):
+def split_documents(documents, chunk_size=500, chunk_overlap=100):
     """
     使用RecursiveCharacterTextSplitter对文档进行分片
     :param documents: 加载的文档对象
@@ -72,7 +72,7 @@ def save_cleaned_content(content, output_path):
 
 
 
-def get_split_text(pdf_path):
+def get_split_pdf(pdf_path):
     #pdf_path = "2018陇南维护招标文件.pdf"  # 替换为你的PDF文件路径
     output_path = "cleaned_content.txt"  # 清理后的文本保存路径
 
@@ -90,3 +90,9 @@ def get_split_text(pdf_path):
 
     return splits
 
+def get_split_text(txt_path):
+    # 提取并清理PDF内容
+    documents= load_txt_file(txt_path)
+    splits = split_documents(documents)
+
+    return splits
